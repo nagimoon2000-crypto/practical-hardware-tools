@@ -63,7 +63,7 @@ document.querySelectorAll('form').forEach(form=>{
 const id='G-JMKNEEYS39',key='pht-analytics-choice-v1';
 let enabled=false,started=false;
 const status=document.getElementById('analytics-status');
-const tag=(...args)=>{window.dataLayer=window.dataLayer||[];window.dataLayer.push(args)};
+function tag(){window.dataLayer=window.dataLayer||[];window.dataLayer.push(arguments)}
 function enable(){
  enabled=true;window['ga-disable-'+id]=false;
  if(!started){
