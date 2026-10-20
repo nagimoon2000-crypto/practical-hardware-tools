@@ -49,6 +49,41 @@ header{flex-wrap:wrap;gap:14px}nav{flex-wrap:wrap}
 <details><summary>Where do purchase and download happen?</summary><p>Payhip hosts checkout and file delivery. Check the current price, included files and refund policy on the product page before purchasing.</p></details>
 <p>Prepared with AI assistance and reviewed against the published product descriptions. Updated 20 October 2026.</p>
 <p><a href="../">Return to the free hardware tools →</a></p></article>
+<style>#share-fallback[hidden]{display:none!important}</style>
+<section class="tool" aria-label="Share this resource">
+<h2>Useful for a colleague?</h2>
+<p>Share this page with someone working on the same engineering question. The link does not include your calculator inputs or results.</p>
+<button type="button" id="copy-resource-link">Copy page link</button>
+<p id="share-status" role="status"></p>
+<label id="share-fallback" hidden>Copy this link
+<input id="share-link-value" type="text" readonly style="width:100%;box-sizing:border-box"></label>
+</section>
+<script>
+(()=>{
+const button=document.getElementById('copy-resource-link');
+const status=document.getElementById('share-status');
+button.addEventListener('click',async()=>{
+ const canonical=document.querySelector('link[rel="canonical"]');
+ const url=new URL(canonical ? canonical.href : location.origin+location.pathname);
+ url.search='';url.hash='';
+ url.searchParams.set('utm_source','shared_link');
+ url.searchParams.set('utm_medium','referral');
+ url.searchParams.set('utm_campaign','tool_sharing');
+ try{
+  if(!navigator.clipboard?.writeText)throw Error('clipboard unavailable');
+  await navigator.clipboard.writeText(url.href);
+  status.textContent='Link copied. Paste it into your message.';
+  document.getElementById('share-fallback').hidden=true;
+  document.dispatchEvent(new Event('pht:link-copied'));
+ }catch{
+  const field=document.getElementById('share-link-value');
+  field.value=url.href;document.getElementById('share-fallback').hidden=false;
+  field.focus();field.select();
+  status.textContent='Automatic copy is unavailable. Copy the selected link below.';
+ }
+});
+})();
+</script>
 </main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://moons66.wordpress.com/">Read the engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
  if(v.some(x=>!Number.isFinite(x)))throw Error('Complete every field with a finite number.');
  if(kind==='battery'){
@@ -100,7 +135,7 @@ document.querySelectorAll('form').forEach(form=>{
 });
 </script><aside id="analytics-choice" style="margin:24px auto;padding:20px;max-width:1100px;border:1px solid #cbd5e1;border-radius:12px" aria-label="Analytics preferences">
 <h2>Optional usage analytics</h2>
-<p>With your permission, Google Analytics uses cookies to measure visits, calculator interactions and product-link clicks. Google receives browser/device information and your IP address to process the request. Calculator input values and results are not sent. You can use every tool without analytics and change your choice here anytime.</p>
+<p>With your permission, Google Analytics uses cookies to measure visits, calculator interactions, link copying and product-link clicks. Google receives browser/device information and your IP address to process the request. Calculator input values and results are not sent. You can use every tool without analytics and change your choice here anytime.</p>
 <button type="button" id="analytics-yes">Allow analytics</button>
 <button type="button" id="analytics-no">Use without analytics</button>
 <p id="analytics-status" role="status"></p>
@@ -142,6 +177,9 @@ document.getElementById('analytics-no').addEventListener('click',()=>choose(fals
 let saved;try{saved=localStorage.getItem(key)}catch{}
 if(saved==='yes')enable();else status.textContent=saved==='no'?'Optional analytics: off.':'Analytics stays off until you allow it.';
 const used=new Set();
+document.addEventListener('pht:link-copied',()=>{
+ if(enabled)tag('event','share',{method:'copy_link',content_type:'hardware_resource'});
+});
 document.addEventListener('change',e=>{
  const form=e.target.closest('form[data-kind]');if(!enabled||!form||used.has(form.dataset.kind))return;
  used.add(form.dataset.kind);tag('event','calculator_use',{calculator:form.dataset.kind});
