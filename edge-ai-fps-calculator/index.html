@@ -1,87 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edge AI FPS Calculator: Inference and Pipeline Latency | Practical Hardware Tools</title><meta name="description" content="Estimate serial pipeline FPS and frame-budget margin from capture, preprocessing, inference and postprocessing times. Includes a 30 FPS example."><meta name="theme-color" content="#103d37"><style>:root{font-family:Arial,Helvetica,sans-serif;color:#163033;background:#f5f7f3;line-height:1.6;--teal:#08695f}*{box-sizing:border-box}body{margin:0}a{color:var(--teal)}header,main,footer{max-width:1160px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dbe3db}.brand{font-weight:800;letter-spacing:-.5px;text-decoration:none;color:#163033}nav{display:flex;gap:22px;font-size:14px}h1{font-size:clamp(38px,6vw,68px);line-height:1.05;letter-spacing:-3px;max-width:800px;margin:18px 0 24px}h2{font-size:30px;line-height:1.2;letter-spacing:-1px;margin:0 0 16px}h3{font-size:18px}p{max-width:750px}.hero{padding:50px 0 38px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700;color:var(--teal)}.intro{font-size:19px;color:#526462;max-width:680px}.tags{display:flex;gap:10px;flex-wrap:wrap}.tags span{border:1px solid #cddbd0;border-radius:30px;padding:5px 12px;font-size:12px}.tool{scroll-margin-top:20px;background:white;border:1px solid #dbe3db;border-radius:20px;padding:32px;margin:24px 0 40px;box-shadow:0 8px 32px #183f3106}.toolhead{display:flex;gap:20px;align-items:start}.number{font:18px monospace;color:#468b7d;border:1px solid #c9ded5;border-radius:50%;padding:10px 14px}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-top:24px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-size:13px;font-weight:700}input{width:100%;font:17px monospace;padding:12px;border:1px solid #bdccc5;border-radius:8px;margin-top:6px;color:#163033;background:#fafcf9}input:focus{outline:3px solid #ace3c9}button,.button{background:var(--teal);color:white;border:0;border-radius:7px;padding:11px 16px;font-weight:700;cursor:pointer;display:inline-block;text-decoration:none}button.secondary{background:#e9f2ec;color:var(--teal)}.actions{display:flex;gap:10px;margin-top:20px}.result{background:#103d37;color:#e6f4df;border-radius:14px;padding:28px;min-height:250px;display:flex;flex-direction:column;justify-content:center}.result small{text-transform:uppercase;letter-spacing:1px;font-size:11px}.big{font-size:44px;letter-spacing:-2px;line-height:1.2;margin:14px 0}.result p{font-size:14px;margin:5px 0}.result .error{color:#ffcfaa;font-size:17px}.note{font-size:13px;color:#62716a}details{margin-top:24px;border-top:1px solid #e1e8e2;padding-top:16px}summary{cursor:pointer;font-weight:700}code{background:#edf3ee;padding:4px 7px;display:inline-block;overflow-wrap:anywhere}.related{margin-top:20px;font-size:14px;border-top:1px solid #e1e8e2;padding-top:18px}.bottom{background:#dcecdf;padding:30px;border-radius:16px}footer{font-size:12px;color:#61736c;padding-bottom:40px}@media(max-width:700px){header{display:block}nav{margin-top:14px;gap:14px;flex-wrap:wrap}main{padding:16px}.hero{padding-top:30px}.grid{grid-template-columns:1fr;gap:20px}.tool{padding:20px}.fields{gap:12px}h1{letter-spacing:-1.5px}.big{font-size:38px}.number{display:none}}
-
-header{flex-wrap:wrap;gap:14px}nav{flex-wrap:wrap}
-</style><meta name="google-site-verification" content="751gEk6PZGH4V62ORHZoDlfiI__NPh7NxvHbU6bn61E" /><link rel="canonical" href="https://nagimoon2000-crypto.github.io/practical-hardware-tools/edge-ai-fps-calculator/"><meta property="og:title" content="Edge AI FPS Calculator: Inference and Pipeline Latency"><meta property="og:description" content="Estimate serial pipeline FPS and frame-budget margin from capture, preprocessing, inference and postprocessing times. Includes a 30 FPS example."><meta property="og:type" content="website"><meta property="og:url" content="https://nagimoon2000-crypto.github.io/practical-hardware-tools/edge-ai-fps-calculator/"></head><body><header><a class="brand" href="../">P / H &nbsp; PRACTICAL HARDWARE TOOLS</a><nav aria-label="Calculators"><a href="../battery-life-calculator/">Battery</a><a href="../camera-motion-blur-calculator/">Motion blur</a><a href="../supercapacitor-hold-up-calculator/">Hold-up</a><a href="../camera-storage-calculator/">Camera storage</a><a href="../edge-ai-fps-calculator/">Edge AI</a><a href="../vibration-fft-calculator/">Vibration FFT</a></nav></header><main><section class="hero"><p class="eyebrow">Free engineering calculator</p><h1>Edge AI FPS Calculator: Inference and Pipeline Latency</h1><p class="intro">Compare measured processing times against a target frame rate before choosing your next optimization.</p><a href="../">← All six free tools</a></section><section class="tool" id="edge"><div class="toolhead"><span class="number">05</span><div><h2>Edge AI frame-time budget</h2><p>Compare measured processing times against a target frame rate before choosing your next optimization.</p></div></div><form data-kind="edge" novalidate><div class="grid"><div><div class="fields"><label for="edge-0">Capture time (ms)<input id="edge-0" type="number" step="any" value="10" required inputmode="decimal"></label><label for="edge-1">Preprocessing time (ms)<input id="edge-1" type="number" step="any" value="5" required inputmode="decimal"></label><label for="edge-2">Inference time (ms)<input id="edge-2" type="number" step="any" value="20" required inputmode="decimal"></label><label for="edge-3">Postprocessing time (ms)<input id="edge-3" type="number" step="any" value="5" required inputmode="decimal"></label><label for="edge-4">Target frame rate (FPS)<input id="edge-4" type="number" step="any" value="30" required inputmode="decimal"></label></div><div class="actions"><button type="button" class="secondary">Reset example</button><button type="button" class="download">Download result CSV</button></div></div><div class="result" aria-live="polite" aria-atomic="true"></div></div></form><p class="note">Example: 10 + 5 + 20 + 5 ms gives 40 ms/frame and a serial processing limit of 25 FPS. A 30 FPS target has a −6.66667 ms time margin.</p><details><summary>How it works &amp; model limitations</summary><p>Serial frame time = capture + preprocessing + inference + postprocessing. Compute-limited FPS = 1000 ÷ serial frame time. Time margin = 1000 ÷ target FPS − serial frame time.</p><p>Assumes one frame at a time with no overlapping stages and no batching. Use representative measured times on the target hardware. This is not a model benchmark or a prediction from TOPS. Camera frame-rate limits, queueing, transfer overhead, jitter and thermal throttling may reduce actual throughput. Include transfers in the measured stage times. Pipelined throughput needs a separate model.</p></details><div class="related">Need a documented test plan and scenario workbook? <a href="https://payhip.com/b/WT3eb?utm_source=free_tools&amp;utm_medium=calculator&amp;utm_campaign=hardware_tools_launch">Explore the Edge AI Board Power and Thermal Test Pack →</a> <span class="note">Paid resource; this calculator is free.</span></div></section><article class="tool"><h2>Why does a 20 ms AI inference not guarantee 50 FPS?</h2><p>Inference is one stage. Add 10 ms capture, 5 ms preprocessing and 5 ms postprocessing and the serial processing time becomes 40 ms. The resulting limit is 25 FPS. A 30 FPS target permits about 33.33 ms, leaving a shortfall of 6.67 ms.</p><h3>Try a different scenario</h3><p>Try reducing inference to 10 ms: the serial estimate becomes 33.33 FPS. This does not guarantee camera throughput. Measure the whole pipeline, including transfers and queues; overlapping stages need a separate throughput model.</p><h3>Before using the result</h3><p>Assumes one frame at a time with no overlapping stages and no batching. Use representative measured times on the target hardware. This is not a model benchmark or a prediction from TOPS. Camera frame-rate limits, queueing, transfer overhead, jitter and thermal throttling may reduce actual throughput. Include transfers in the measured stage times. Pipelined throughput needs a separate model.</p></article><section class="tool"><h2>Compare three practical scenarios</h2><p>Choose an example to replace the calculator inputs. These are planning scenarios, not measured product benchmarks.</p><div class="scenario-grid"><div class="scenario"><button type="button" class="try-scenario" data-tool="edge" data-values="[10, 5, 20, 5, 30]">20 ms inference</button><p>Baseline serial pipeline: capture, preprocessing, inference and postprocessing.</p></div><div class="scenario"><button type="button" class="try-scenario" data-tool="edge" data-values="[10, 5, 10, 5, 30]">10 ms inference</button><p>Reduce inference time only and compare the margin at 30 FPS.</p></div><div class="scenario"><button type="button" class="try-scenario" data-tool="edge" data-values="[10, 5, 10, 5, 60]">Target 60 FPS</button><p>Keep the faster model but double target FPS to expose the remaining budget gap.</p></div></div><p class="scenario-status" role="status"></p></section><section class="tool"><h2>Common questions</h2><h3>Is this a GPU or model benchmark?</h3><p>No. Enter measured stage times from your target device. Model size, transfer costs, input shape and power mode can change those times. The examples are arithmetic scenarios, not hardware performance claims.</p><h3>What if pipeline stages overlap?</h3><p>This calculator adds serial stage times. Overlapped pipelines need a separate throughput analysis of bottlenecks, queues and synchronization. Do not equate reciprocal serial latency with measured pipelined throughput.</p><p><small>Prepared by Practical Hardware Tools with AI assistance. Calculations use the displayed formulas; validate assumptions against your hardware measurements.</small></p></section><section class="bottom"><h2>More engineering tools</h2><ul><li><a href="../battery-life-calculator/">Battery lifetime calculator and worked example</a></li><li><a href="../camera-motion-blur-calculator/">Camera motion blur calculator and worked example</a></li><li><a href="../supercapacitor-hold-up-calculator/">Supercapacitor hold-up calculator and worked example</a></li><li><a href="../camera-storage-calculator/">AI camera storage calculator and worked example</a></li><li><a href="../edge-ai-fps-calculator/">Edge AI frame-time budget calculator and worked example</a></li><li><a href="../vibration-fft-calculator/">Vibration FFT planning calculator and worked example</a></li><li><a href="../hardware-spreadsheet-guides/">Compare hardware spreadsheets and free starter files</a></li></ul></section><style>#share-fallback[hidden]{display:none!important}</style>
-<section class="tool" aria-label="Share this resource">
-<h2>Useful for a colleague?</h2>
-<p>Share this page with someone working on the same engineering question. The link does not include your calculator inputs or results.</p>
-<button type="button" id="copy-resource-link">Copy page link</button>
-<p id="share-status" role="status"></p>
-<label id="share-fallback" hidden>Copy this link
-<input id="share-link-value" type="text" readonly style="width:100%;box-sizing:border-box"></label>
-</section>
-<script>
-(()=>{
-const button=document.getElementById('copy-resource-link');
-const status=document.getElementById('share-status');
-button.addEventListener('click',async()=>{
- const canonical=document.querySelector('link[rel="canonical"]');
- const url=new URL(canonical ? canonical.href : location.origin+location.pathname);
- url.search='';url.hash='';
- url.searchParams.set('utm_source','shared_link');
- url.searchParams.set('utm_medium','referral');
- url.searchParams.set('utm_campaign','tool_sharing');
- try{
-  if(!navigator.clipboard?.writeText)throw Error('clipboard unavailable');
-  await navigator.clipboard.writeText(url.href);
-  status.textContent='Link copied. Paste it into your message.';
-  document.getElementById('share-fallback').hidden=true;
-  document.dispatchEvent(new Event('pht:link-copied'));
- }catch{
-  const field=document.getElementById('share-link-value');
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edge AI FPS Calculator: Inference and Pipeline Latency | Practical Hardware Tools</title><meta name="description" content="Estimate serial pipeline FPS and frame-budget margin from capture, preprocessing, inference and postprocessing times. Includes a 30 FPS example."><meta name="theme-color" content="#103d37"><style>:root{font-family:Arial,Helvetica,sans-serif;color:#163033;background:#f5f7f3;line-height:1.6;--teal:#08695f}*{box-sizing:border-box}body{margin:0}a{color:var(--teal)}header,main,footer{max-width:1160px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dbe3db}.brand{font-weight:800;letter-spacing:-.5px;text-decoration:none;color:#163033}nav{display:flex;gap:22px;font-size:14px}h1{font-size:clamp(38px,6vw,68px);line-height:1.05;letter-spacing:-3px;max-width:800px;margin:18px 0 24px}h2{font-size:30px;line-height:1.2;letter-spacing:-1px;margin:0 0 16px}h3{font-size:18px}p{max-width:750px}.hero{pa><header><a class="brand" href="../">P / H &nbsp; PRACTICAL HARDWARE TOOLS</a><nav aria-label="Calculators"><a href="../battery-life-calculator/">Battery</a><a href="../camera-motion-blur-calculator/">Motion blur</a><a href="../supercapacitor-ho>Compare three practical scenarios</h2><p>Choose an example to replace the calculator inputs. These are planning scenarios, not measured product benchmarks.</p><div class="scenario-grid"><div class="scenario"><button type="button" class="try-scenarionst field=document.getElementById('share-link-value');
   field.value=url.href;document.getElementById('share-fallback').hidden=false;
   field.focus();field.select();
   status.textContent='Automatic copy is unavailable. Copy the selected link below.';
- }
-});
-})();
-</script>
-</main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://moons66.wordpress.com/">Read the engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
- if(v.some(x=>!Number.isFinite(x)))throw Error('Complete every field with a finite number.');
- if(kind==='battery'){
-  const [c,u,a,t,s,p]=v;
-  if(c<=0||u<=0||u>100||a<0||s<0||p<=0||t<0||t>p)throw Error('Use positive capacity and period, 0–100% usable capacity, and active time between zero and the cycle period.');
-  const avg=a*t/p+s/1000*(1-t/p);
-  if(avg<=0)throw Error('Average current must be greater than zero to estimate lifetime.');
-  return [c*u/100/avg/24,avg,c*u/100/avg];
- }
- if(kind==='motion'){
-  const [f,n,s,e,b]=v;
-  if(f<=0||n<1||!Number.isInteger(n)||s<0||e<0||b<=0)throw Error('Use positive field of view, whole-number pixels and blur limit; speed and exposure cannot be negative.');
-  const blur=s*e/1e6/(f/n);
-  return [blur,s===0?null:b*(f/n)/s*1e6,b-blur];
- }
- if(kind==='storage'){
-  const [n,b,h,d,o]=v;
-  if(!Number.isInteger(n)||n<1||b<=0||h<=0||h>24||d<=0||o<0)throw Error('Use whole-number cameras, positive bitrate and days, 0–24 recording hours above zero, and non-negative overhead.');
-  const daily=n*b*1e6/8*h*3600/1e9;
-  return [daily*d*(1+o/100)/1000,daily,n*b];
- }
- if(kind==='edge'){
-  const [a,b,c,d,f]=v;
-  const total=a+b+c+d;
-  if(v.some(x=>x<0)||f<=0||total<=0)throw Error('Stage times must be non-negative, total time positive and target FPS greater than zero.');
-  return [1000/total,total,1000/f-total];
- }
- if(kind==='fft'){
-  const [s,n,f]=v;
-  if(s<=0||!Number.isInteger(n)||n<2||f<=0||f>=s/2)throw Error('Use positive sample rate, at least 2 whole samples, and a frequency of interest strictly below half the sample rate.');
-  return [s/n,n/s,s/2];
- }
- if(kind!=='supercap')throw Error('Unknown calculator.');
- const [c,h,l,e,p]=v;
- if(c<=0||h<=l||l<0||e<=0||e>100||p<=0)throw Error('Use positive capacitance and load, start voltage above minimum voltage, and efficiency above 0% up to 100%.');
- const energy=.5*c*(h*h-l*l);
- return [energy*e/100/p,energy*e/100,energy];
-}
-
-
-const labels={battery:['Estimated lifetime','days','Average battery current','mA','Estimated runtime','hours'],motion:['Predicted motion blur','px','Maximum exposure at your blur limit','µs','Remaining blur budget','px'],supercap:['Estimated hold-up time','seconds','Usable energy after efficiency','J','Stored energy in voltage window','J']};
-Object.assign(labels,{storage:['Required storage with overhead','TB','Daily video data before overhead','GB/day','Aggregate encoded bitrate','Mbps'],edge:['Serial processing limit','FPS','Total frame time','ms','Time margin at target FPS','ms'],fft:['Frequency-bin spacing','Hz','Record duration','seconds','Nyquist frequency','Hz']});
-const fmt=n=>n===null?'No motion limit':new Intl.NumberFormat('en',{maximumSignificantDigits:6}).format(n);
-document.querySelectorAll('form').forEach(form=>{
- const inputs=[...form.querySelectorAll('input')],out=form.querySelector('.result'),kind=form.dataset.kind;
- const update=()=>{try{if(inputs.some(i=>i.value.trim()===''))throw Error('Complete every field to calculate.');const r=calculate(kind,inputs.map(i=>Number(i.value)));if(r.some(n=>n!==null&&!Number.isFinite(n)))throw Error('These values exceed the numerical range. Reduce the input magnitude.');const l=labels[kind];out.innerHTML=`<small>${l[0]}</small><div class="big">${fmt(r[0])} <span style="font-size:19px;letter-spacing:0">${l[1]}</span></div><p>${l[2]}: <strong>${fmt(r[1])} ${r[1]===null?'':l[3]}</strong></p><p>${l[4]}: <strong>${fmt(r[2])} ${l[5]}</strong></p><p style="margin-top:15px;opacity:.75">${kind==='motion'?(r[2]>=0?'Within your selected motion-blur budget.':'Exceeds your selected motion-blur budget.'):kind==='edge'?(r[2]>=0?'Within the serial frame-time budget.':'Exceeds the serial frame-time budget.'):kind==='fft'?'Bin spacing is not guaranteed spectral resolution.':'First-pass estimate. Validate with measured hardware.'}</p>`;}catch(e){out.textContent=e.message;out.classList.add('invalid');return}out.classList.remove('invalid');};
+dge:['Serial processing limit','FPS','Total frame time','ms','Time margin at target FPS','ms'],fft:['Frequency-bin spacing','Hz','Record duration','seconds','Nyquist frequency','Hz']});
+const fmt=n=>n===null?'No motion limit':new Intl.NumberFormat('en',{mg></p><p style="margin-top:15px;opacity:.75">${kind==='motion'?(r[2]>=0?'Within your selected motion-blur budget.':'Exceeds your selected motion-blur budget.'):kind==='edge'?(r[2]>=0?'Within the serial frame-time budget.':'Exceeds the serial frame-time budget.'):kind==='fft'?'Bin spacing is not guaranteed spectral resolution.':'First-pass estimate. Validate with measured hardware.'}</p>`;}catch(e){out.textContent=e.message;out.classList.add('invalid');return}out.classList.remove('invalid');};
  form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('input',update);form.querySelector('button').addEventListener('click',()=>{inputs.forEach(i=>i.value=i.defaultValue);update()});
  form.querySelector('.download').addEventListener('click',()=>{update();if(out.classList.contains('invalid'))return;const rows=[['Practical Hardware Tools',kind],...inputs.map(i=>[i.labels[0].textContent,i.value]),['Results',out.textContent],['Note','Planning estimate only; review model limitations.']];const blob=new Blob([rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=kind+'-estimate.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});update();
 });
@@ -97,21 +19,11 @@ document.querySelectorAll('form').forEach(form=>{
 (()=>{
 const id='G-JMKNEEYS39',key='pht-analytics-choice-v1';
 let enabled=false,started=false;
-const status=document.getElementById('analytics-status');
-function tag(){window.dataLayer=window.dataLayer||[];window.dataLayer.push(arguments)}
-function enable(){
- enabled=true;window['ga-disable-'+id]=false;
- if(!started){
-  started=true;
-  tag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+const status=dt',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
   tag('js',new Date());
   const clean=new URL(location.origin+location.pathname);
   const query=new URLSearchParams(location.search);
-  for(const k of ['utm_source','utm_medium','utm_campaign']){
-   const v=query.get(k);if(v&&/^[a-zA-Z0-9_-]{1,80}$/.test(v))clean.searchParams.set(k,v);
-  }
-  let ref='';try{ref=new URL(document.referrer).origin}catch{}
-  tag('config',id,{page_location:clean.href,page_referrer:ref,allow_google_signals:false,allow_ad_personalization_signals:false});
+  for(const kage_referrer:ref,allow_google_signals:false,allow_ad_personalization_signals:false});
   const script=document.createElement('script');script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.append(script);
  }else tag('consent','update',{analytics_storage:'granted'});
  status.textContent='Optional analytics: allowed.';
@@ -147,10 +59,6 @@ document.addEventListener('click',e=>{
 </script>
 <style>.scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.scenario{padding:18px;border:1px solid #cbd5e1;border-radius:12px}.scenario button{white-space:normal}.scenario p{font-size:15px;line-height:1.6}</style>
 <script>document.querySelectorAll('.try-scenario').forEach(button=>button.addEventListener('click',()=>{
-const form=document.querySelector('form[data-kind="'+button.dataset.tool+'"]');
-const values=JSON.parse(button.dataset.values);
-form.querySelectorAll('input').forEach((input,i)=>input.value=values[i]);
-form.dispatchEvent(new Event('input',{bubbles:true}));
-form.dispatchEvent(new Event('change',{bubbles:true}));
+const form=document.quent(new Event('change',{bubbles:true}));
 button.closest('section').querySelector('.scenario-status').textContent='Loaded: '+button.textContent+'. Result: '+form.querySelector('.result .big').textContent.trim()+'. The inputs above have been updated.';
 }));</script></body></html>
