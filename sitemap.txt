@@ -7,6 +7,7 @@ https://nagimoon2000-crypto.github.io/practical-hardware-tools/edge-ai-fps-calcu
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-calculator/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/hardware-spreadsheet-guides/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/circuit-measurement-error-budget/
+https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/multiphase-current-budget/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/regulated-rail-battery-current/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/camera-bitrate-from-file-growth/
