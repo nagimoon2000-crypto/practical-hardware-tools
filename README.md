@@ -1,6 +1,6 @@
 # Practical Hardware Tools
 
-Six free browser calculators for hardware planning, with worked examples, scenario comparisons and CSV export. No account or installation is required.
+Seven free browser calculators for hardware planning, with worked examples, scenario comparisons and CSV export. No account or installation is required.
 
 **[Open the free hardware calculators](https://nagimoon2000-crypto.github.io/practical-hardware-tools/?utm_source=github&utm_medium=readme&utm_campaign=discovery)**
 
@@ -15,6 +15,14 @@ Six free browser calculators for hardware planning, with worked examples, scenar
 | Why does a 20 ms inference not deliver 50 FPS? | [Edge AI FPS calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/edge-ai-fps-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Serial stage latency, estimated FPS and frame-budget margin |
 | How long should I record vibration for 1 Hz FFT bins? | [Vibration FFT planner](https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Record duration, bin spacing and Nyquist frequency |
 
+| Do the pull-ups on multiple I2C sensor boards become too strong in parallel? | [I2C pull-up resistor calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Rise-time and sink-current bounds, resistor tolerance and parallel pull-ups |
+
+## Start with a worked guide
+
+[Browse six practical question-to-tool routes](https://moons66.wordpress.com/2026/10/26/start-here-find-your-free-hardware-calculator-and-worked-guide/?utm_source=github&utm_medium=readme&utm_campaign=guide_directory): battery life, CCTV storage, I2C pull-ups, motion blur, backup power and Edge AI FPS. Each route links a worked guide, its free calculator and an optional related Payhip resource.
+
+[Follow new guides through RSS](https://moons66.wordpress.com/feed/). Copy this feed address into your RSS reader; no email address is needed for this option.
+
 ## Try a concrete example
 
 1. Open the Edge AI calculator.
@@ -25,7 +33,7 @@ Six free browser calculators for hardware planning, with worked examples, scenar
 
 These numbers illustrate arithmetic, not a device benchmark. Overlapping pipeline stages require a separate throughput model.
 
-Each individual calculator page includes three preset scenarios, a worked example, common questions and model limits.
+Calculator pages explain their assumptions and model limits. Use the available examples and scenarios as starting points, then replace inputs with measurements from your hardware.
 
 ## Use the results responsibly
 
