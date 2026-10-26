@@ -14,7 +14,6 @@ Seven free browser calculators for hardware planning, with worked examples, scen
 | How much recording storage do my cameras need? | [Camera storage calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/camera-storage-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Decimal GB/TB from encoded bitrate, camera count and retention |
 | Why does a 20 ms inference not deliver 50 FPS? | [Edge AI FPS calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/edge-ai-fps-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Serial stage latency, estimated FPS and frame-budget margin |
 | How long should I record vibration for 1 Hz FFT bins? | [Vibration FFT planner](https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Record duration, bin spacing and Nyquist frequency |
-
 | Do the pull-ups on multiple I2C sensor boards become too strong in parallel? | [I2C pull-up resistor calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Rise-time and sink-current bounds, resistor tolerance and parallel pull-ups |
 
 ## Start with a worked guide
