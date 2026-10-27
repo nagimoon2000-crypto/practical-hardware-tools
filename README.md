@@ -28,7 +28,7 @@ If you need reusable review files, [inspect the related paid resource and its li
 ### CCTV recording capacity
 Record measured bitrate, camera count and retention days. State whether the allowance adds capacity or reserves part of the drive.
 [Read the five-assumption guide](https://moons66.wordpress.com/2026/10/26/before-sizing-an-nvr-drive-five-cctv-recording-assumptions-to-check/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path) · [Try the free storage calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/camera-storage-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
-For an optional review file, [inspect the related paid resource](https://payhip.com/b/MtxAU?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
+This path is free. The embedded-storage recovery workbook addresses recovery evidence, not CCTV retention-capacity sizing; it is not offered as a substitute here.
 
 ### I2C sensor-board integration
 Inventory every board's pull-up resistors before changing a value. Keep bus voltage, capacitance and device sink-current constraints together.
@@ -39,7 +39,7 @@ The guides and calculators are free. Check each paid product's description and a
 
 ## Start with a worked guide
 
-[Browse six practical question-to-tool routes](https://moons66.wordpress.com/2026/10/26/start-here-find-your-free-hardware-calculator-and-worked-guide/?utm_source=github&utm_medium=readme&utm_campaign=guide_directory): battery life, CCTV storage, I2C pull-ups, motion blur, backup power and Edge AI FPS. Each route links a worked guide, its free calculator and an optional related Payhip resource.
+[Browse six practical question-to-tool routes](https://moons66.wordpress.com/2026/10/26/start-here-find-your-free-hardware-calculator-and-worked-guide/?utm_source=github&utm_medium=readme&utm_campaign=guide_directory): battery life, CCTV storage, I2C pull-ups, motion blur, backup power and Edge AI FPS. Each route links a worked guide and its free calculator. Consider a paid resource only when its specific scope matches your task.
 
 [Follow new guides through RSS](https://moons66.wordpress.com/feed/). Copy this feed address into your RSS reader; no email address is needed for this option.
 
