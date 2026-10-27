@@ -16,6 +16,27 @@ Seven free browser calculators for hardware planning, with worked examples, scen
 | How long should I record vibration for 1 Hz FFT bins? | [Vibration FFT planner](https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Record duration, bin spacing and Nyquist frequency |
 | Do the pull-ups on multiple I2C sensor boards become too strong in parallel? | [I2C pull-up resistor calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/?utm_source=github&utm_medium=readme&utm_campaign=discovery) | Rise-time and sink-current bounds, resistor tolerance and parallel pull-ups |
 
+## Three practical review paths
+
+Choose one problem, compare one changed assumption, and keep the input conditions with the result.
+
+### IoT sensor battery budget
+Record battery-side active and sleep current and their durations. Compare reducing sleep current with changing the reporting interval.
+[Read the worked comparison](https://moons66.wordpress.com/2026/10/26/improve-iot-battery-life-reduce-active-current-or-sleep-current-first/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path) · [Try the free battery calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/battery-life-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path).
+If you need reusable review files, [inspect the related paid resource and its listed contents](https://payhip.com/b/s9ud4?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path).
+
+### CCTV recording capacity
+Record measured bitrate, camera count and retention days. State whether the allowance adds capacity or reserves part of the drive.
+[Read the five-assumption guide](https://moons66.wordpress.com/2026/10/26/before-sizing-an-nvr-drive-five-cctv-recording-assumptions-to-check/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path) · [Try the free storage calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/camera-storage-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
+For an optional review file, [inspect the related paid resource](https://payhip.com/b/MtxAU?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
+
+### I2C sensor-board integration
+Inventory every board's pull-up resistors before changing a value. Keep bus voltage, capacitance and device sink-current constraints together.
+[Read the parallel pull-up guide](https://moons66.wordpress.com/2026/10/26/adding-i2c-sensor-boards-check-parallel-pull-ups-before-changing-the-resistor/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path) · [Try the free I2C calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path).
+[Review the optional paid resource](https://payhip.com/b/SYC3D?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path) only if its listed scope fits your task.
+
+The guides and calculators are free. Check each paid product's description and available preview before deciding; no purchase is needed to use these paths.
+
 ## Start with a worked guide
 
 [Browse six practical question-to-tool routes](https://moons66.wordpress.com/2026/10/26/start-here-find-your-free-hardware-calculator-and-worked-guide/?utm_source=github&utm_medium=readme&utm_campaign=guide_directory): battery life, CCTV storage, I2C pull-ups, motion blur, backup power and Edge AI FPS. Each route links a worked guide, its free calculator and an optional related Payhip resource.
