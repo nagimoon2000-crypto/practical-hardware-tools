@@ -19,3 +19,4 @@ https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/roi-crop-ve
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/series-supercapacitor-bank/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/pipeline-throughput-versus-latency/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/vibration-alias-frequency/
+https://nagimoon2000-crypto.github.io/practical-hardware-tools/ko-hardware-calculation-guide/
