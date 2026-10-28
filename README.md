@@ -28,7 +28,9 @@ If you need reusable review files, [inspect the related paid resource and its li
 ### CCTV recording capacity
 Record measured bitrate, camera count and retention days. State whether the allowance adds capacity or reserves part of the drive.
 [Read the five-assumption guide](https://moons66.wordpress.com/2026/10/26/before-sizing-an-nvr-drive-five-cctv-recording-assumptions-to-check/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path) · [Try the free storage calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/camera-storage-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
-This path is free. The embedded-storage recovery workbook addresses recovery evidence, not CCTV retention-capacity sizing; it is not offered as a substitute here.
+The calculator and guide remain free. For a review across up to 12 camera groups, [inspect the optional CCTV retention capacity workbook and free text preview](https://payhip.com/b/iMlGT?utm_source=github&utm_medium=readme&utm_campaign=cctv_retention&utm_content=review_path). It includes a 15-item measurement record and four worked examples, and separates payload overhead from reserved volume. The XLSX was checked in its generation engine; native Excel compatibility has not been independently tested. Check the product page for current price, files and terms.
+
+For example, four 4 Mbps streams recorded continuously for seven days contain 1.2096 decimal TB of video. An illustrative 10% added overhead and 20% reserved fraction require 1.2096 × 1.10 ÷ 0.80 = 1.6632 TB of usable recording volume. Those margins are assumptions, not universal settings or a retention guarantee.
 
 ### I2C sensor-board integration
 Inventory every board's pull-up resistors before changing a value. Keep bus voltage, capacitance and device sink-current constraints together.
