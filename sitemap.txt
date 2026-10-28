@@ -8,6 +8,7 @@ https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-cal
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/hardware-spreadsheet-guides/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/circuit-measurement-error-budget/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/
+https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/raspberry-pi-5-local-ai-power-budget/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/camera-storage-overhead-vs-free-space/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/multiphase-current-budget/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/regulated-rail-battery-current/
