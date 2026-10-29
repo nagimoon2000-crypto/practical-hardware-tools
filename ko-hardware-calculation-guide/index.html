@@ -24,7 +24,7 @@ header{flex-wrap:wrap;gap:14px}nav{flex-wrap:wrap}
 <h3>파형 측정 전 검증</h3><ul><li>SDA와 SCL에 장착된 모든 풀업 저항을 확인합니다. 여러 보드의 저항은 병렬로 연결될 수 있습니다.</li><li>가장 약한 장치의 VOL/IOL 보장값과 케이블·프로브를 포함한 용량을 사용합니다.</li><li>조립 후 30–70% 상승 시간을 측정합니다. 레벨 시프터와 능동 가속기가 있으면 별도 분석이 필요합니다.</li></ul>
 <p><a href="../i2c-pullup-resistor-calculator/">무료 I2C 풀업 저항 계산기에서 허용 범위 확인하기</a> · <a href="https://payhip.com/b/SYC3D?utm_source=hardware_tools&amp;utm_medium=korean_guide&amp;utm_campaign=search_discovery&amp;utm_content=i2c">선택형 I2C 검토 워크북과 미리보기</a></p>
 <p>공식 기술 참고: <a href="https://www.ti.com/lit/an/slva689/slva689.pdf">Texas Instruments — I2C Bus Pullup Resistor Calculation</a>. 위 계산은 독립적인 설명이며 TI의 승인이나 실제 하드웨어 시험을 의미하지 않습니다.</p></article>
-<section class="tool"><h2>무료 도구와 유료 자료는 어떻게 다른가요?</h2><p>무료 계산기는 브라우저에서 입력을 바꾸고 결과를 확인하는 도구입니다. Payhip 자료는 파일로 계산과 검토 기록을 남기려는 사용자를 위한 선택형 상품입니다. 구매 전에 상품별 파일 구성, 라이선스와 무료 Preview를 확인하세요. 한국어 안내가 있다고 해서 다운로드 상품이 한국어라는 의미는 아닙니다.</p><p><a href="https://moons66.wordpress.com/2026/10/26/before-sizing-an-nvr-drive-five-cctv-recording-assumptions-to-check/">블로그: NVR 디스크 선정 전 확인할 다섯 가지 가정 (English)</a></p><p><small>AI 도움으로 작성하고 예제 수치는 별도로 검산했습니다. 실제 장치의 성능이나 수명을 보장하지 않습니다.</small></p></section><style>#share-fallback[hidden]{display:none!important}</style>
+<section class="tool"><h2>무료 도구와 유료 자료는 어떻게 다른가요?</h2><p>무료 계산기는 브라우저에서 입력을 바꾸고 결과를 확인하는 도구입니다. Payhip 자료는 파일로 계산과 검토 기록을 남기려는 사용자를 위한 선택형 상품입니다. 구매 전에 상품별 파일 구성, 라이선스와 무료 Preview를 확인하세요. 한국어 안내가 있다고 해서 다운로드 상품이 한국어라는 의미는 아닙니다.</p><p><a href="../notes/camera-storage-overhead-vs-free-space/">CCTV 저장 용량: 여유 용량과 추가 비율의 차이 (English)</a></p><p><small>AI 도움으로 작성하고 예제 수치는 별도로 검산했습니다. 실제 장치의 성능이나 수명을 보장하지 않습니다.</small></p></section><style>#share-fallback[hidden]{display:none!important}</style>
 <section class="tool" aria-label="Share this resource">
 <h2>Useful for a colleague?</h2>
 <p>Share this page with someone working on the same engineering question. The link does not include your calculator inputs or results.</p>
@@ -59,7 +59,7 @@ button.addEventListener('click',async()=>{
 });
 })();
 </script>
-</main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://moons66.wordpress.com/">Read the engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
+</main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://nagimoon2000-crypto.github.io/practical-hardware-tools/">Free calculators and engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
  if(v.some(x=>!Number.isFinite(x)))throw Error('Complete every field with a finite number.');
  if(kind==='battery'){
   const [c,u,a,t,s,p]=v;
