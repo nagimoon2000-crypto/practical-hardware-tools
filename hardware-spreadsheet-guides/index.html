@@ -192,6 +192,13 @@ document.getElementById('analytics-no').addEventListener('click',()=>choose(fals
 let saved;try{saved=localStorage.getItem(key)}catch{}
 if(saved==='yes')enable();else status.textContent=saved==='no'?'Optional analytics: off.':'Analytics stays off until you allow it.';
 const used=new Set();
+document.addEventListener('pht:i2c-use',()=>{
+ if(!enabled||used.has('i2c'))return;
+ used.add('i2c');tag('event','calculator_use',{calculator:'i2c'});
+});
+document.addEventListener('pht:i2c-download',()=>{
+ if(enabled)tag('event','file_download',{file_extension:'csv',calculator:'i2c'});
+});
 document.addEventListener('pht:link-copied',()=>{
  if(enabled)tag('event','share',{method:'copy_link',content_type:'hardware_resource'});
 });
