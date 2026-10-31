@@ -11,6 +11,13 @@ header{flex-wrap:wrap;gap:14px}nav{flex-wrap:wrap}
 <p><strong>Battery budget:</strong> use operating-state current and duration to estimate average battery current and runtime. A short transmit burst and a long sleep interval must both be represented.</p>
 <p><strong>Edge AI validation:</strong> record power, temperatures and completed outputs under a defined workload. Compare cooling or model settings only after fixing the measurement boundary.</p>
 <p>A calculator gives an estimate. A workbook helps keep inputs, measurements and assumptions together. Neither is a substitute for testing your device.</p></article>
+<article class="tool" id="adc-reference"><h2>ADC reference drift budget and evidence workbook</h2>
+<p><strong>Start with the free example:</strong> learn why a box temperature coefficient is not a local per-degree slope. A synthetic 3 ppm/C specification across -40 to 125 C gives a 495 ppm span; adding a 200 ppm initial residual gives a 695 ppm conservative reference bound.</p>
+<p><a href="https://payhip.com/Moonsfactory/blog/news/adc-reference-drift-why-box-tempco-is-not-a-per-degree-error?utm_source=hardware_tools&amp;utm_medium=guide&amp;utm_campaign=adc_reference">Read the worked ADC example online — no download required →</a></p>
+<p><strong>Optional workbook:</strong> two editable XLSX sheets for the reference budget and evidence log, a buyer guide with three worked decisions, and a license. Retain the part grade, full temperature interval, calibration assumptions and review findings.</p>
+<p><strong>Limits:</strong> fixed-input, non-ratiometric ideal ADC model. Excludes ADC offset, INL, noise, aging, hysteresis and load effects. Native Excel and physical hardware tests were not performed.</p>
+<p><a href="https://payhip.com/b/UEoMx?utm_source=hardware_tools&amp;utm_medium=guide&amp;utm_campaign=adc_reference">Inspect workbook contents and current price on Payhip →</a> · <a href="../vibration-fft-calculator/">Free sampling and FFT planning calculator →</a></p>
+<p><small>The FFT tool addresses sample rate and record length; it does not calculate reference drift.</small></p></article>
 <article class="tool" id="cctv"><h2>CCTV retention capacity and NVR storage workbook</h2>
 <p><strong>Useful for:</strong> installations with different camera bitrates, recording hours or retention requirements. Start with representative recorded bitrate, not resolution alone.</p>
 <p><strong>Included:</strong> an editable XLSX workbook with 12 camera-group rows and 15 evidence records, a buyer guide and license. The free Preview is a text file explaining the scope.</p>
@@ -211,7 +218,11 @@ document.addEventListener('click',e=>{
  const download=e.target.closest('.download');
  if(download&&!download.closest('form').querySelector('.invalid'))tag('event','file_download',{file_extension:'csv',calculator:download.closest('form').dataset.kind});
  const link=e.target.closest('a[href]');if(!link)return;
- const url=new URL(link.href);if(url.hostname==='payhip.com')tag('event','product_click',{product_path:url.pathname});
+ const url=new URL(link.href);
+ if(url.hostname==='payhip.com'){
+  if(/^\/b\/[A-Za-z0-9]+\/?$/.test(url.pathname))tag('event','product_click',{product_path:url.pathname});
+  else if(url.pathname.includes('/blog/'))tag('event','guide_click',{guide_path:url.pathname});
+ }
 });
 })();
 </script>

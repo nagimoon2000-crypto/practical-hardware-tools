@@ -157,7 +157,11 @@ document.addEventListener('click',e=>{
  const download=e.target.closest('.download');
  if(download&&!download.closest('form').querySelector('.invalid'))tag('event','file_download',{file_extension:'csv',calculator:download.closest('form').dataset.kind});
  const link=e.target.closest('a[href]');if(!link)return;
- const url=new URL(link.href);if(url.hostname==='payhip.com')tag('event','product_click',{product_path:url.pathname});
+ const url=new URL(link.href);
+ if(url.hostname==='payhip.com'){
+  if(/^\/b\/[A-Za-z0-9]+\/?$/.test(url.pathname))tag('event','product_click',{product_path:url.pathname});
+  else if(url.pathname.includes('/blog/'))tag('event','guide_click',{guide_path:url.pathname});
+ }
 });
 })();
 </script>

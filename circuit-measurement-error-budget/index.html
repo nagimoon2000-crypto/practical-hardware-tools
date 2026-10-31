@@ -36,7 +36,7 @@ button.addEventListener('click',async()=>{
 });
 })();
 </script>
-</main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://nagimoon2000-crypto.github.io/practical-hardware-tools/">Free calculators and engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
+<section class="tool" id="reference-drift-next"><h2>Review reference drift separately from ADC resolution</h2><p>Ideal quantization noise does not include reference-temperature gain error. Start with a free worked example, then use an evidence workbook if you need to retain assumptions and calibration records.</p><p><a href="../hardware-spreadsheet-guides/#adc-reference">Compare the ADC reference example and optional workbook →</a></p></section></main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://nagimoon2000-crypto.github.io/practical-hardware-tools/">Free calculators and engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
  if(v.some(x=>!Number.isFinite(x)))throw Error('Complete every field with a finite number.');
  if(kind==='battery'){
   const [c,u,a,t,s,p]=v;
@@ -148,7 +148,11 @@ document.addEventListener('click',e=>{
  const download=e.target.closest('.download');
  if(download&&!download.closest('form').querySelector('.invalid'))tag('event','file_download',{file_extension:'csv',calculator:download.closest('form').dataset.kind});
  const link=e.target.closest('a[href]');if(!link)return;
- const url=new URL(link.href);if(url.hostname==='payhip.com')tag('event','product_click',{product_path:url.pathname});
+ const url=new URL(link.href);
+ if(url.hostname==='payhip.com'){
+  if(/^\/b\/[A-Za-z0-9]+\/?$/.test(url.pathname))tag('event','product_click',{product_path:url.pathname});
+  else if(url.pathname.includes('/blog/'))tag('event','guide_click',{guide_path:url.pathname});
+ }
 });
 })();
 </script>
