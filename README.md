@@ -45,6 +45,17 @@ The guides and calculators are free. Check each paid product's description and a
 
 [Browse the latest hardware review articles](https://payhip.com/Moonsfactory/blog/news?utm_source=github&utm_medium=readme&utm_campaign=guide_directory).
 
+### Which FFT record length meets a 3 Hz bin-spacing target?
+
+At 12,800 samples per second, compare the two captures below. Each link opens the free calculator with the sample rate and record length already entered.
+
+| Acquired samples | Capture duration | FFT bin spacing |
+| --- | --- | --- |
+| [Try 4,096 samples](https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-calculator/?example=fft-4096&utm_source=github&utm_medium=readme&utm_campaign=fft_record_comparison#fft) | 0.32 s | 3.125 Hz |
+| [Try 8,192 samples](https://nagimoon2000-crypto.github.io/practical-hardware-tools/vibration-fft-calculator/?example=fft-8192&utm_source=github&utm_medium=readme&utm_campaign=fft_record_comparison#fft) | 0.64 s | 1.5625 Hz |
+
+The longer capture meets the 3 Hz spacing target. Whether two nearby tones can be distinguished also depends on the window and the signals being measured.
+
 ## Try a concrete example
 
 1. Open the Edge AI calculator.
