@@ -83,6 +83,8 @@ Calculator inputs are processed in the browser. Optional Google Analytics remain
 
 ## Need a structured measurement record?
 
+Before PCB layout, record the schematic revision, the component limit you used, your calculated range and the bench measurement still needed. [Follow the I2C review example](https://payhip.com/Moonsfactory/blog/news/free-schematic-review-checklist-what-evidence-should-you-record-before-pcb-layout?utm_source=github&utm_medium=readme&utm_campaign=schematic_evidence) or [download the free schematic review checklist](https://payhip.com/b/wMQyZ?utm_source=github&utm_medium=readme&utm_campaign=schematic_evidence).
+
 The calculators are free to use. Separate paid XLSX workbooks provide planning and measurement-recording workflows.
 
 [Compare the battery and Edge AI workbooks, limits and free starter files](https://nagimoon2000-crypto.github.io/practical-hardware-tools/hardware-spreadsheet-guides/?utm_source=github&utm_medium=readme&utm_campaign=discovery).
