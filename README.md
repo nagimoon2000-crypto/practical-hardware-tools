@@ -22,28 +22,28 @@ Choose one problem, compare one changed assumption, and keep the input condition
 
 ### IoT sensor battery budget
 Record battery-side active and sleep current and their durations. Compare reducing sleep current with changing the reporting interval.
-[Read the worked comparison](https://moons66.wordpress.com/2026/10/26/improve-iot-battery-life-reduce-active-current-or-sleep-current-first/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path) · [Try the free battery calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/battery-life-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path).
+[Read the worked comparison](https://payhip.com/Moonsfactory/blog/news/improve-iot-battery-life-reduce-active-current-or-sleep-current-first?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path) · [Try the free battery calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/battery-life-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path).
 If you need reusable review files, [inspect the related paid resource and its listed contents](https://payhip.com/b/s9ud4?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_battery_20261027&utm_content=review_path).
 
 ### CCTV recording capacity
 Record measured bitrate, camera count and retention days. State whether the allowance adds capacity or reserves part of the drive.
-[Read the five-assumption guide](https://moons66.wordpress.com/2026/10/26/before-sizing-an-nvr-drive-five-cctv-recording-assumptions-to-check/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path) · [Try the free storage calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/camera-storage-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
+[Read the five-assumption guide](https://payhip.com/Moonsfactory/blog/news/before-sizing-an-nvr-drive-five-cctv-recording-assumptions-to-check?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path) · [Try the free storage calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/camera-storage-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_storage_20261027&utm_content=review_path).
 The calculator and guide remain free. For a review across up to 12 camera groups, [inspect the optional CCTV retention capacity workbook and free text preview](https://payhip.com/b/iMlGT?utm_source=github&utm_medium=readme&utm_campaign=cctv_retention&utm_content=review_path). It includes a 15-item measurement record and four worked examples, and separates payload overhead from reserved volume. The XLSX was checked in its generation engine; native Excel compatibility has not been independently tested. Check the product page for current price, files and terms.
 
 For example, four 4 Mbps streams recorded continuously for seven days contain 1.2096 decimal TB of video. An illustrative 10% added overhead and 20% reserved fraction require 1.2096 × 1.10 ÷ 0.80 = 1.6632 TB of usable recording volume. Those margins are assumptions, not universal settings or a retention guarantee.
 
 ### I2C sensor-board integration
 Inventory every board's pull-up resistors before changing a value. Keep bus voltage, capacitance and device sink-current constraints together.
-[Read the parallel pull-up guide](https://moons66.wordpress.com/2026/10/26/adding-i2c-sensor-boards-check-parallel-pull-ups-before-changing-the-resistor/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path) · [Try the free I2C calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path).
+[Read the parallel pull-up guide](https://payhip.com/Moonsfactory/blog/news/adding-i2c-sensor-boards-check-parallel-pull-ups-before-changing-the-resistor?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path) · [Try the free I2C calculator](https://nagimoon2000-crypto.github.io/practical-hardware-tools/i2c-pullup-resistor-calculator/?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path).
 [Review the optional paid resource](https://payhip.com/b/SYC3D?utm_source=github&utm_medium=referral&utm_campaign=pht_30d_i2c_20261027&utm_content=review_path) only if its listed scope fits your task.
 
 The guides and calculators are free. Check each paid product's description and available preview before deciding; no purchase is needed to use these paths.
 
 ## Start with a worked guide
 
-[Browse six practical question-to-tool routes](https://moons66.wordpress.com/2026/10/26/start-here-find-your-free-hardware-calculator-and-worked-guide/?utm_source=github&utm_medium=readme&utm_campaign=guide_directory): battery life, CCTV storage, I2C pull-ups, motion blur, backup power and Edge AI FPS. Each route links a worked guide and its free calculator. Consider a paid resource only when its specific scope matches your task.
+[Browse six practical question-to-tool routes](https://payhip.com/Moonsfactory/blog/news/start-here-find-your-free-hardware-calculator-and-worked-guide?utm_source=github&utm_medium=readme&utm_campaign=guide_directory): battery life, CCTV storage, I2C pull-ups, motion blur, backup power and Edge AI FPS. Each route links a worked guide and its free calculator. Consider a paid resource only when its specific scope matches your task.
 
-[Follow new guides through RSS](https://moons66.wordpress.com/feed/). Copy this feed address into your RSS reader; no email address is needed for this option.
+[Browse the latest hardware review articles](https://payhip.com/Moonsfactory/blog/news?utm_source=github&utm_medium=readme&utm_campaign=guide_directory).
 
 ## Try a concrete example
 
