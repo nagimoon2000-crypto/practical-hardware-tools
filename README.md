@@ -4,6 +4,8 @@ Seven free browser calculators for hardware planning, with worked examples, scen
 
 **[Open the free hardware calculators](https://nagimoon2000-crypto.github.io/practical-hardware-tools/?utm_source=github&utm_medium=readme&utm_campaign=discovery)**
 
+**[한국어 계산 가이드](https://nagimoon2000-crypto.github.io/practical-hardware-tools/ko-hardware-calculation-guide/?utm_source=github&utm_medium=readme&utm_campaign=korean_guide)**에서 CCTV 저장 용량, 배터리 수명, I2C 풀업 저항 등 일곱 가지 무료 도구의 입력값과 계산 예제를 확인하세요. [노출 시간·슈퍼커패시터·진동 FFT 예제 바로가기](https://nagimoon2000-crypto.github.io/practical-hardware-tools/ko-hardware-calculation-guide/?utm_source=github&utm_medium=readme&utm_campaign=korean_guide#more-calculators)
+
 ## Choose the question you need to answer
 
 | Engineering question | Free tool | What it calculates |
