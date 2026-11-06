@@ -1,0 +1,47 @@
+RADIO RETRIES AND SENSOR BATTERY LIFE
+One-hour bench worksheet | Practical Hardware Tools | 7 November 2026
+
+Question: how much battery life do measured radio retries cost?
+Compare two hours of operation with the same number of scheduled reports.
+Use hours representative of the deployment. Record failed attempts too.
+
+Worked example
+60 scheduled reports in 3,600 seconds; 12 extra attempts; each attempt
+uses 50 mA for 0.40 s. Between attempts the device draws 20 microamps.
+The 72 attempts occupy 28.8 s. Sleep occupies the remaining 3,571.2 s.
+Total charge = (50 x 28.8 + 0.020 x 3,571.2) / 3,600 = 0.41984 mAh.
+Over one hour this corresponds to 0.41984 mA average.
+Without the 12 retries: 24 s active and 3,576 s asleep = 0.35320 mAh.
+For a 1,000 mAh battery with 80% usable capacity, the estimates are
+79.4 days with retries and 94.4 days without them. These are modeled
+lifetimes under the stated duty cycles, not field measurements.
+
+Fill in from your trace
+Board / firmware / date / link conditions:
+Observation time (s):                Scheduled reports:
+Total attempts incl. failed ones:    Reports successfully delivered:
+Active time summed from trace (s):   Average active current (mA):
+Sleep time (s):                      Sleep current (microamps):
+Other non-overlapping states and charge (mA x seconds):
+Average current = sum(current in mA x duration in s) / observed seconds:
+Battery capacity (mAh):              Usable fraction:
+Runtime (days) = capacity x usable fraction / average current / 24:
+
+Replay the worked example in the free calculator
+Set capacity 1,000 mAh, usable capacity 80%, active current 50 mA,
+sleep current 20 microamps, period 60 s. Use 0.48 s active per period
+with retries, then 0.40 s without them. The 0.48 s is the hour-wide
+average per scheduled report, not the duration of one radio attempt.
+https://nagimoon2000-crypto.github.io/practical-hardware-tools/battery-life-calculator/?utm_source=worksheet&utm_medium=referral&utm_campaign=radio_retry_budget
+
+Bench checks
+[ ] Measure at the battery so that both states include regulator losses.
+[ ] Sum actual awake durations if retries use different currents or lengths.
+[ ] Count listening, acknowledgments and backoff separately if they are
+    missing from your active trace. Check that state times sum to the window.
+[ ] Compare normal reception and weak reception separately. Record drops.
+[ ] Check peak current, battery sag and cutoff voltage before accepting
+    the estimate. Averages alone do not establish that the device will run.
+
+Optional: record multiple operating states in the battery planning pack.
+https://payhip.com/b/s9ud4?utm_source=worksheet&utm_medium=referral&utm_campaign=radio_retry_budget
