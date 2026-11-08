@@ -32,8 +32,12 @@ document.getElementById('analytics-yes').addEventListener('click',()=>choose(tru
 document.getElementById('analytics-no').addEventListener('click',()=>choose(false));
 let saved;try{saved=localStorage.getItem(key)}catch{}
 if(saved==='yes')enable();else status.textContent=saved==='no'?'Optional analytics: off.':'Analytics stays off until you allow it.';
+const canonical = document.querySelector('link[rel="canonical"]');
+const pagePlacement = canonical
+ ? new URL(canonical.href).pathname.split('/').filter(Boolean).pop()
+ : 'existing_link';
 const used=new Set();
-const paidIds = new Set(['9PVDO','bcfR4','2fX4i','5XeO9','DgP4z','JdmYg','Y4dKU','lgSGa','mLiMD','pXqe5','yeLKj','2ZpLy','B1lPG','nrIe9','UEoMx','iMlGT','SYC3D','s9ud4','WT3eb']);
+const paidIds = new Set(['9PVDO','bcfR4','2fX4i','5XeO9','DgP4z','JdmYg','Y4dKU','lgSGa','mLiMD','pXqe5','yeLKj','2ZpLy','B1lPG','nrIe9','UEoMx','iMlGT','SYC3D','s9ud4','WT3eb','9n0zw','qKy5d','o2uVc','93hu7']);
 function recordResult(calculator) {
  if (enabled) tag('event','calculator_result',{calculator});
 }
@@ -53,7 +57,7 @@ document.addEventListener('click', event => {
  const url = new URL(link.href);
  const match = /^\/b\/([A-Za-z0-9]+)\/?$/.exec(url.pathname);
  if (url.origin === 'https://payhip.com' && match && paidIds.has(match[1]))
-  tag('event','paid_product_link_click',{product_id:match[1],placement:link.dataset.placement || 'existing_link'});
+  tag('event','paid_product_link_click',{product_id:match[1],placement:link.dataset.placement || pagePlacement});
 });
 
 document.addEventListener('pht:retention-use',()=>{recordResult('storage_retention');if(!enabled||used.has('storage_retention'))return;used.add('storage_retention');tag('event','calculator_use',{calculator:'storage_retention'});});
