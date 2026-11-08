@@ -36,7 +36,7 @@ button.addEventListener('click',async()=>{
 });
 })();
 </script>
-</main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://nagimoon2000-crypto.github.io/practical-hardware-tools/">Free calculators and engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
+<p><a href="circuit-measurement-error-budget/#rs485-field-check">Troubleshoot an RS-485 link with the free field checklist</a></p></main><footer>Practical Hardware Tools · Free engineering estimates · Updated October 2026<br>Your calculator inputs stay in this page. The calculators do not send inputs to a server or store them. Hosting providers may process ordinary access logs. Links to external resources follow their own privacy policies.<br><a href="https://nagimoon2000-crypto.github.io/practical-hardware-tools/">Free calculators and engineering notes</a></footer><noscript>Enable JavaScript to use these calculators. Formulas and limitations remain available below each tool.</noscript><script>function calculate(kind,v){
  if(v.some(x=>!Number.isFinite(x)))throw Error('Complete every field with a finite number.');
  if(kind==='battery'){
   const [c,u,a,t,s,p]=v;
@@ -93,67 +93,5 @@ document.querySelectorAll('form').forEach(form=>{
 <p id="analytics-status" role="status"></p>
 <a href="https://policies.google.com/privacy">Google privacy policy</a>
 </aside>
-<script>
-(()=>{
-const id='G-JMKNEEYS39',key='pht-analytics-choice-v1';
-let enabled=false,started=false;
-const status=document.getElementById('analytics-status');
-function tag(){window.dataLayer=window.dataLayer||[];window.dataLayer.push(arguments)}
-function enable(){
- enabled=true;window['ga-disable-'+id]=false;
- if(!started){
-  started=true;
-  tag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
-  tag('js',new Date());
-  const clean=new URL(location.origin+location.pathname);
-  const query=new URLSearchParams(location.search);
-  for(const k of ['utm_source','utm_medium','utm_campaign']){
-   const v=query.get(k);if(v&&/^[a-zA-Z0-9_-]{1,80}$/.test(v))clean.searchParams.set(k,v);
-  }
-  let ref='';try{ref=new URL(document.referrer).origin}catch{}
-  tag('config',id,{page_location:clean.href,page_referrer:ref,allow_google_signals:false,allow_ad_personalization_signals:false});
-  const script=document.createElement('script');script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.append(script);
- }else tag('consent','update',{analytics_storage:'granted'});
- status.textContent='Optional analytics: allowed.';
-}
-function choose(yes){
- try{localStorage.setItem(key,yes?'yes':'no')}catch{}
- if(yes)enable();else{
-  enabled=false;window['ga-disable-'+id]=true;
-  if(started)tag('consent','update',{analytics_storage:'denied'});
-  status.textContent='Optional analytics: off. All tools remain available.';
- }
-}
-document.getElementById('analytics-yes').addEventListener('click',()=>choose(true));
-document.getElementById('analytics-no').addEventListener('click',()=>choose(false));
-let saved;try{saved=localStorage.getItem(key)}catch{}
-if(saved==='yes')enable();else status.textContent=saved==='no'?'Optional analytics: off.':'Analytics stays off until you allow it.';
-const used=new Set();
-document.addEventListener('pht:i2c-use',()=>{
- if(!enabled||used.has('i2c'))return;
- used.add('i2c');tag('event','calculator_use',{calculator:'i2c'});
-});
-document.addEventListener('pht:i2c-download',()=>{
- if(enabled)tag('event','file_download',{file_extension:'csv',calculator:'i2c'});
-});
-document.addEventListener('pht:link-copied',()=>{
- if(enabled)tag('event','share',{method:'copy_link',content_type:'hardware_resource'});
-});
-document.addEventListener('change',e=>{
- const form=e.target.closest('form[data-kind]');if(!enabled||!form||used.has(form.dataset.kind))return;
- used.add(form.dataset.kind);tag('event','calculator_use',{calculator:form.dataset.kind});
-});
-document.addEventListener('click',e=>{
- if(!enabled)return;
- const download=e.target.closest('.download');
- if(download&&!download.closest('form').querySelector('.invalid'))tag('event','file_download',{file_extension:'csv',calculator:download.closest('form').dataset.kind});
- const link=e.target.closest('a[href]');if(!link)return;
- const url=new URL(link.href);
- if(url.hostname==='payhip.com'){
-  if(/^\/b\/[A-Za-z0-9]+\/?$/.test(url.pathname))tag('event','product_click',{product_path:url.pathname});
-  else if(url.pathname.includes('/blog/'))tag('event','guide_click',{guide_path:url.pathname});
- }
-});
-})();
-</script>
+<script src="assets/analytics.js"></script>
 </body></html>

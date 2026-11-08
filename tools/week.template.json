@@ -1,0 +1,14 @@
+{
+  "week_start": "YYYY-MM-DD",
+  "timezone": "Asia/Seoul",
+  "product_id": "9PVDO",
+  "eligible_sessions": null,
+  "qualified_organic_sessions": null,
+  "result_sessions": null,
+  "paid_cta_sessions": null,
+  "payhip_product_views": null,
+  "payhip_checkout_starts": null,
+  "creation_minutes": null,
+  "support_minutes": null,
+  "payhip_ledger_complete": false
+}
