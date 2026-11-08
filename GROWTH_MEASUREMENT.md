@@ -2,7 +2,7 @@
 
 The home link opens an un-gated field checklist at `circuit-measurement-error-budget/#rs485-field-check`. A visitor can test polarity, isolate duplicate addresses and compare termination readings before opening the existing RS485 Troubleshooting Checklist & Test Pack (Payhip ID `bcfR4`). The separate parallel-termination calculation workbook is `9PVDO`. The free field checklist is the HTML on this site. The new CTA makes no claim about a downloadable sample, current price or repair outcome.
 
-Product audit: the November 5 storefront audit recorded both product titles at their Payhip URLs. The October 17 creation record for bcfR4 initially showed hidden visibility. A fresh anonymous HTTP check received a Cloudflare challenge. Before merging, open the destination as a buyer, verify visibility, contents, current price and terms, and that checkout opens. Keep test activity out of the sales report.
+Product audit: the November 5 storefront audit recorded both product titles at their Payhip URLs. The October 17 creation record for bcfR4 initially showed hidden visibility. A fresh anonymous HTTP check received a Cloudflare challenge. Before adding the direct troubleshooting-pack CTA, open its destination as a buyer, verify visibility, contents, current price and terms, and that checkout opens. Keep test activity out of the sales report.
 
 ## Measure the path
 
