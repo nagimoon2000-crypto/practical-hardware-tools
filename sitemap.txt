@@ -21,3 +21,5 @@ https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/series-supe
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/pipeline-throughput-versus-latency/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/notes/vibration-alias-frequency/
 https://nagimoon2000-crypto.github.io/practical-hardware-tools/ko-hardware-calculation-guide/
+https://nagimoon2000-crypto.github.io/practical-hardware-tools/find-missing-shipments-in-excel/
+https://nagimoon2000-crypto.github.io/practical-hardware-tools/meeting-notes-to-action-items/

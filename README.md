@@ -109,3 +109,7 @@ Please do not include confidential designs, customer data or credentials. Report
 Link to the calculator that answers the specific engineering question, rather than only the home page. Each tool works directly in the browser and includes its own explanation.
 
 Prepared with AI assistance. Examples are illustrative; engineering validation remains the user's responsibility.
+## Free workplace exercises
+
+- [Find missing shipments in Excel](https://nagimoon2000-crypto.github.io/practical-hardware-tools/find-missing-shipments-in-excel/?utm_source=github&utm_medium=readme&utm_campaign=ai_practice_en)
+- [Turn meeting notes into action items](https://nagimoon2000-crypto.github.io/practical-hardware-tools/meeting-notes-to-action-items/?utm_source=github&utm_medium=readme&utm_campaign=ai_practice_en)

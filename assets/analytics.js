@@ -41,6 +41,14 @@ const paidIds = new Set(["mfpHk", "zog3I", "Cp6Rs", "UEoMx", "5GwqN", "JYv97", "
 function recordResult(calculator) {
  if (enabled) tag('event','calculator_result',{calculator});
 }
+document.addEventListener('submit', event => {
+ const form = event.target;
+ if (!enabled || !event.isTrusted || form.id !== 'exercise') return;
+ const product = form.dataset.product;
+ if (!paidIds.has(product) || !form.checkValidity() || used.has(product)) return;
+ used.add(product);
+ tag('event','practice_answer_checked',{product_id:product,placement:pagePlacement});
+});
 document.addEventListener('input', event => {
  const form = event.target.closest('form[data-kind]');
  if (event.isTrusted && form && form.querySelector('.result:not(.invalid)')) recordResult(form.dataset.kind);
